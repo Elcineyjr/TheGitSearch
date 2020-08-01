@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Toolbar, Switch } from '@material-ui/core';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '~/store/actions';
 
 import backgroundImg from '~/images/Background.svg';
@@ -33,6 +33,8 @@ function Home() {
   const [username, setUsername] = useState();
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
+
+  const themeTitle = useSelector((state) => state.theme.title);
 
   const searchUsername = async (usernameToSearch) => {
     try {
@@ -68,7 +70,11 @@ function Home() {
           <SearchField handleSearch={searchUsername} />
 
           <DarkModeText>Darkmode</DarkModeText>
-          <Switch color="primary" onChange={handletoggleTheme} />
+          <Switch
+            color="primary"
+            onChange={handletoggleTheme}
+            checked={themeTitle === 'dark'}
+          />
         </Toolbar>
       </AppHeader>
 
