@@ -19,5 +19,5 @@ export default function Route({ component: Component, ...rest }) {
 }
 
 Route.propTypes = {
-  component: PropTypes.element.isRequired,
+  component: PropTypes.func.isRequired,
 };

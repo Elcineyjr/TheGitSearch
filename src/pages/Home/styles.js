@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const DarkModeText = styled.div`
+  margin-left: 8px;
+  color: ${(props) => props.theme.colors.text};
+`;
+
 export const HomePageLogo = styled.img`
   height: 410px;
   width: 730px;
@@ -16,7 +21,9 @@ export const Background = styled.main`
   ${(props) =>
     props.backgroundImg
       ? `background-image: url(${props.backgroundImg})`
-      : 'background-color: #E5E5E5'};
+      : `background-color: ${props.theme.colors.background}`};
+
+  background-color: ${(props) => props.theme.colors.background};
 
   position: fixed;
   top: 0px;
@@ -59,7 +66,7 @@ export const Footer = styled.footer`
   align-items: center;
   justify-content: center;
 
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.colors.header};
   box-shadow: 0px -4px 4px rgba(47, 37, 68, 0.15);
 
   font-style: normal;

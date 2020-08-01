@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Toolbar } from '@material-ui/core';
+import { Toolbar, Switch } from '@material-ui/core';
+
+import { useDispatch } from 'react-redux';
+import { toggleTheme } from '~/store/actions';
 
 import backgroundImg from '~/images/Background.svg';
 import headerLogo from '~/images/AppBarLogo.svg';
@@ -11,7 +14,14 @@ import SearchField from '~/components/SearchField';
 import List from '~/components/List';
 import Modal from '~/components/Modal';
 
-import { HomePageLogo, Background, Container, Title, Footer } from './styles';
+import {
+  HomePageLogo,
+  Background,
+  Container,
+  Title,
+  Footer,
+  DarkModeText,
+} from './styles';
 
 import { search } from '~/api';
 
@@ -22,6 +32,7 @@ function Home() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [username, setUsername] = useState();
   const [error, setError] = useState(false);
+  const dispatch = useDispatch();
 
   const searchUsername = async (usernameToSearch) => {
     try {
@@ -42,6 +53,10 @@ function Home() {
     setUsername(user.login);
   };
 
+  const handletoggleTheme = () => {
+    dispatch(toggleTheme());
+  };
+
   return (
     <>
       <Background backgroundImg={clickedToSearch ? backgroundImg : null} />
@@ -51,6 +66,9 @@ function Home() {
           <AppHeaderLogo src={headerLogo} alt="Header logo" />
 
           <SearchField handleSearch={searchUsername} />
+
+          <DarkModeText>Darkmode</DarkModeText>
+          <Switch color="primary" onChange={handletoggleTheme} />
         </Toolbar>
       </AppHeader>
 

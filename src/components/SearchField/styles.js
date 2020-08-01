@@ -19,6 +19,10 @@ export const InputSearchField = styled(InputBase)`
   border: 1px solid #e1dfe0;
   box-sizing: border-box;
   border-radius: 4px 0 0 4px;
+
+  && {
+    color: ${(props) => props.theme.colors.text};
+  }
 `;
 
 export const Container = styled.div`

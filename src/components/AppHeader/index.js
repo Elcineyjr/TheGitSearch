@@ -1,6 +1,11 @@
 import React from 'react';
 import { AppBar } from '@material-ui/core';
+import { useSelector } from 'react-redux';
 
 export default function AppHeader(props) {
-  return <AppBar {...props} color="inherit" />;
+  const theme = useSelector((state) => state.theme);
+
+  return (
+    <AppBar {...props} style={{ backgroundColor: `${theme.colors.header}` }} />
+  );
 }
