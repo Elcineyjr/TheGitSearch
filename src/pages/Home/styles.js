@@ -49,6 +49,7 @@ export const Title = styled.div`
   font-weight: normal;
   font-size: 21px;
   line-height: 21px;
+  color: ${(props) => props.theme.colors.text};
 
   border-bottom: 1px solid #e1dfe0;
 `;
@@ -66,7 +67,7 @@ export const Footer = styled.footer`
   align-items: center;
   justify-content: center;
 
-  background-color: ${(props) => props.theme.colors.header};
+  background-color: ${(props) => props.theme.colors.primary};
   box-shadow: 0px -4px 4px rgba(47, 37, 68, 0.15);
 
   font-style: normal;

@@ -6,6 +6,6 @@ export default function AppHeader(props) {
   const theme = useSelector((state) => state.theme);
 
   return (
-    <AppBar {...props} style={{ backgroundColor: `${theme.colors.header}` }} />
+    <AppBar {...props} style={{ backgroundColor: `${theme.colors.primary}` }} />
   );
 }

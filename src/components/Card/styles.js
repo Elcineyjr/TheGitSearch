@@ -5,7 +5,7 @@ export const CardContainer = styled.div`
   width: 230px;
   height: 270px;
   margin: 10px;
-  background: #ffffff;
+  background: ${(props) => props.theme.colors.card.background};
   box-shadow: 0px 0px 6px rgba(47, 37, 68, 0.25);
   border-radius: 10px;
   &:hover {
@@ -31,7 +31,7 @@ export const Username = styled.div`
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
-  color: #2f2544;
+  color: ${(props) => props.theme.colors.card.username};
 `;
 
 export const Link = styled.a`
@@ -39,7 +39,7 @@ export const Link = styled.a`
   font-weight: normal;
   font-size: 12px;
   line-height: 14px;
-  color: #03cada;
+  color: ${(props) => props.theme.colors.card.link};
 `;
 
 export const Score = styled.div`
@@ -48,17 +48,17 @@ export const Score = styled.div`
   font-weight: normal;
   font-size: 12px;
   line-height: 14px;
-  color: #7b6490;
+  color: ${(props) => props.theme.colors.card.score};
 `;
 
 export const Button = styled(MuiButton)`
   && {
     /* button */
-    background: #8c56c2;
+    background: ${(props) => props.theme.colors.card.button};
     border-radius: 20px;
     margin-top: 16px;
     :hover {
-      background: #8c56c2;
+      background: ${(props) => props.theme.colors.card.button};
     }
 
     /* text */
@@ -66,6 +66,6 @@ export const Button = styled(MuiButton)`
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
-    color: #ffffff;
+    color: ${(props) => props.theme.colors.card.buttonText};
   }
 `;
